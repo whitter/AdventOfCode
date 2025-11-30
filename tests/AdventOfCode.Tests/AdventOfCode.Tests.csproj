@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\AdventOfCode.Puzzles.Year2022\AdventOfCode.Puzzles.Year2022.csproj" />
     <ProjectReference Include="..\..\src\AdventOfCode.Puzzles\AdventOfCode.Puzzles.csproj" />
   </ItemGroup>
 

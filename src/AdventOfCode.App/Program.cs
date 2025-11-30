@@ -1,8 +1,14 @@
 ﻿using AdventOfCode.Puzzles;
 using ConsoleTables;
 
-var puzzleTypes = typeof(IPuzzle).Assembly
-    .GetTypes()
+
+var assemblies = new[] {
+    typeof(IPuzzle).Assembly,
+    typeof(AdventOfCode.Puzzles.Year2022.Day01).Assembly
+};
+
+var puzzleTypes = assemblies
+    .SelectMany(a => a.GetTypes())
     .Where(t => !t.IsAbstract && typeof(IPuzzle).IsAssignableFrom(t))
     .ToList();
 

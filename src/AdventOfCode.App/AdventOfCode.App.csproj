@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Puzzles.Year2022\AdventOfCode.Puzzles.Year2022.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles\AdventOfCode.Puzzles.csproj" />
   </ItemGroup>
 
