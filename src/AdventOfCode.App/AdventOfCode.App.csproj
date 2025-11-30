@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Puzzles.Year2020\AdventOfCode.Puzzles.Year2020.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.Year2021\AdventOfCode.Puzzles.Year2021.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles.Year2022\AdventOfCode.Puzzles.Year2022.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles.Year2023\AdventOfCode.Puzzles.Year2023.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles.Year2024\AdventOfCode.Puzzles.Year2024.csproj" />

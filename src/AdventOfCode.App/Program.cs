@@ -3,7 +3,8 @@ using ConsoleTables;
 
 
 var assemblies = new[] {
-    typeof(IPuzzle).Assembly,
+    typeof(AdventOfCode.Puzzles.Year2020.Day01).Assembly,
+    typeof(AdventOfCode.Puzzles.Year2021.Day01).Assembly,
     typeof(AdventOfCode.Puzzles.Year2022.Day01).Assembly,
     typeof(AdventOfCode.Puzzles.Year2023.Day01).Assembly,
     typeof(AdventOfCode.Puzzles.Year2024.Day01).Assembly
@@ -64,7 +65,7 @@ foreach (var group in grouped)
         table.AddRow(puzzle.Day.ToString("00"), puzzle.Name, part1, $"{bench1}ms", part2, $"{bench2}ms");
     }
 
-    table.Write(Format.Alternative);
+    table.Write();
 
     Console.WriteLine();
 }
