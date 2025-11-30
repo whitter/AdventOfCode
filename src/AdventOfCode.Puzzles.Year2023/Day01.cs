@@ -7,7 +7,7 @@ public class Day01 : PuzzleBase<string[]>
     public override string Name => "Trebuchet?!";
 
     protected override string[] Parse(string input)
-     => Lines(input);
+        => Lines(input);
 
 
     protected override string Part1(string[] input)

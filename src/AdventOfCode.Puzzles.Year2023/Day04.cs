@@ -7,7 +7,7 @@ public class Day04 : PuzzleBase<int[]>
     public override string Name => "Scratchcards";
 
     protected override int[] Parse(string input)
-     => [.. Lines(input)
+        => [.. Lines(input)
             .Select(line =>
             {
                 var winning = SplitBy<string>(line[(line.IndexOf(':') + 1)..line.IndexOf('|')], " ");

@@ -7,6 +7,8 @@
   <Folder Name="/src/">
     <Project Path="src/AdventOfCode.App/AdventOfCode.App.csproj" />
     <Project Path="src/AdventOfCode.Puzzles.Year2022/AdventOfCode.Puzzles.Year2022.csproj" />
+    <Project Path="src/AdventOfCode.Puzzles.Year2023/AdventOfCode.Puzzles.Year2023.csproj" />
+    <Project Path="src/AdventOfCode.Puzzles.Year2024/AdventOfCode.Puzzles.Year2024.csproj" />
     <Project Path="src/AdventOfCode.Puzzles/AdventOfCode.Puzzles.csproj" />
   </Folder>
   <Folder Name="/tests/">

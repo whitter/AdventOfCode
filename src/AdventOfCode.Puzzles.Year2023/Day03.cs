@@ -11,7 +11,7 @@ public partial class Day03 : PuzzleBase<IEnumerable<Part>>
     public override string Name => "Gear Ratios";
 
     protected override IEnumerable<Part> Parse(string input)
-     => ToParts(Lines(input));
+        => ToParts(Lines(input));
 
 
     protected override string Part1(IEnumerable<Part> input)

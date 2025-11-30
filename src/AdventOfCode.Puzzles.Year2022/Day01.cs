@@ -7,9 +7,10 @@ public class Day01 : PuzzleBase<int[]>
     public override string Name => "Calorie Counting";
 
     protected override int[] Parse(string input)
-     => [.. Lines(input, true)
+        => Lines(input, true)
             .Select(x => SplitBy<int>(x, "\r", "\n", "\r\n").Sum())
-            .OrderByDescending(x => x)];
+            .OrderByDescending(x => x)
+            .ToArray();
 
     protected override string Part1(int[] input)
         => input.First().ToString();

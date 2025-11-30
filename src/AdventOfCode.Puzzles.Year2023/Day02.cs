@@ -9,7 +9,7 @@ public class Day02 : PuzzleBase<Dictionary<int, IEnumerable<Cube>>>
     public override string Name => "Cube Conundrum";
 
     protected override Dictionary<int, IEnumerable<Cube>> Parse(string input)
-     => Lines(input)
+        => Lines(input)
             .Select(line =>
             {
                 var game = line.Split(':');

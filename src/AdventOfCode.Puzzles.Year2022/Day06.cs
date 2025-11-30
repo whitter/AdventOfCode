@@ -1,4 +1,4 @@
-using static MoreLinq.Extensions.WindowExtension;
+using MoreLinq;
 
 namespace AdventOfCode.Puzzles.Year2022;
 
@@ -22,8 +22,8 @@ public class Day06 : PuzzleBase<string>
         var distinct = input
             .Window(size)
             .Index()
-            .First(x => x.Item.Distinct().Count() == size);
+            .First(x => x.Value.Distinct().Count() == size);
 
-        return distinct.Index + size;
+        return distinct.Key + size;
     }
 }

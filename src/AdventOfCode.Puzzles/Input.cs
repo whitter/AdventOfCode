@@ -1,28 +1,33 @@
-namespace AdventOfCode.Puzzles;
+using System;
+using System.IO;
 
-public static class Input
+namespace AdventOfCode.Puzzles
 {
-    /// <summary>
-    /// Load an input file from the /inputs/{year}/{day}.txt folder.
-    /// Use example = true to load {day}.example.txt.
-    /// </summary>
-    public static string For(int year, int day, bool example = false)
+    public static class Input
     {
-        // BaseDirectory is /bin/Debug/.../ for the running project.
-        var baseDir = AppContext.BaseDirectory;
-
-        // Adjust to solution root then to /inputs
-        var root = Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "..", ".."));
-        var inputsDir = Path.Combine(root, "inputs", year.ToString());
-
-        var fileName = $"{day:00}{(example ? ".example" : "")}.txt";
-        var path = Path.Combine(inputsDir, fileName);
-
-        if (!File.Exists(path))
+        /// <summary>
+        /// Load an input file from the /inputs/{year}/{day}.txt folder.
+        /// Use example = true to load {day}.example.txt.
+        /// </summary>
+        public static string For(int year, int day, bool example = false)
         {
-            throw new FileNotFoundException($"Puzzle input not found: {path}");
-        }
+            // BaseDirectory is /bin/Debug/.../ for the running project.
+            var baseDir = AppContext.BaseDirectory;
 
-        return File.ReadAllText(path);
+            // Adjust to solution root then to /inputs
+            var root = Path.GetFullPath(Path.Combine(baseDir, "..", "..", "..", "..", ".."));
+            var inputsDir = Path.Combine(root, "inputs", year.ToString());
+
+            var fileName = $"{day:00}{(example ? ".example" : "")}.txt";
+            var path = Path.Combine(inputsDir, fileName);
+
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Puzzle input not found: {path}");
+            }
+
+            return File.ReadAllText(path);
+        }
     }
 }
+

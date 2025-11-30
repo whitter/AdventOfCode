@@ -7,7 +7,9 @@ public class Day04 : PuzzleBase<int[][][]>
     public override string Name => "Camp Cleanup";
 
     protected override int[][][] Parse(string input)
-        => [.. Lines(input).Select(x => SplitBy<string>(x, ",").Select(y => SplitBy<int>(y, "-")).ToArray())];
+        => Lines(input)
+            .Select(x => SplitBy<string>(x, ",").Select(y => SplitBy<int>(y, "-")).ToArray())
+            .ToArray();
 
     protected override string Part1(int[][][] input)
         => input

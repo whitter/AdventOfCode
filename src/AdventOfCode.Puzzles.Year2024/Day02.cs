@@ -11,12 +11,15 @@ public class Day02 : PuzzleBase<int[][]>
 
     protected override string Part1(int[][] input) => input.Count(IsSafe).ToString();
 
-    protected override string Part2(int[][] input) =>
-        input.Count(line => ToDampened(line).Any(IsSafe)).ToString();
+    protected override string Part2(int[][] input)
+        => input
+            .Count(line => ToDampened(line).Any(IsSafe))
+            .ToString();
 
     private static bool IsSafe(int[] line)
     {
         var increasing = line[1] > line[0];
+
         return line[..^1].Zip(line[1..], (first, second) =>
             Math.Abs(second - first) >= 1 &&
             Math.Abs(second - first) <= 3 &&

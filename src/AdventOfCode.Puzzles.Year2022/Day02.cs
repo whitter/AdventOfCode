@@ -7,10 +7,10 @@ public class Day02 : PuzzleBase<(int, int)[]>
     public override string Name => "Rock Paper Scissors";
 
     protected override (int, int)[] Parse(string input)
-     => Lines(input)
-        .Select(x => SplitBy<char>(x, " "))
-        .Select(x => (x[0] - 'A', x[1] - 'X'))
-        .ToArray();
+        => Lines(input)
+            .Select(x => SplitBy<char>(x, " "))
+            .Select(x => (x[0] - 'A', x[1] - 'X'))
+            .ToArray();
 
     protected override string Part1((int, int)[] input)
     {

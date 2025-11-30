@@ -9,13 +9,13 @@ public class Day07 : PuzzleBase<IEnumerable<(long Target, int[] Numbers)>>
     public override string Name => "Bridge Repair";
 
     protected override IEnumerable<(long Target, int[] Numbers)> Parse(string input)
-    => Lines(input)
-        .Select(lines =>
-        {
-            var sections = SplitBy<string>(lines, ":");
+        => Lines(input)
+            .Select(lines =>
+            {
+                var sections = SplitBy<string>(lines, ":");
 
-            return (long.Parse(sections[0], CultureInfo.InvariantCulture), SplitBy<int>(sections[1].Trim(), " "));
-        });
+                return (long.Parse(sections[0], CultureInfo.InvariantCulture), SplitBy<int>(sections[1].Trim(), " "));
+            });
 
     protected override string Part1(IEnumerable<(long Target, int[] Numbers)> input)
         => input.Where(x => IsEquationPart1(x.Numbers[0], x.Target, x.Numbers[1..])).Sum(x => x.Target).ToString();
