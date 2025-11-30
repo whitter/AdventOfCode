@@ -1,21 +1,11 @@
+using AdventOfCode.Puzzles;
 using AdventOfCode.Puzzles.Year2024;
 
 namespace AdventOfCode.Tests.Year2024;
 
 public class Day06Tests
 {
-    private const string SampleInput = """
-    ....#.....
-    .........#
-    ..........
-    ..#.......
-    .......#..
-    ..........
-    .#..^.....
-    ........#.
-    #.........
-    ......#...
-    """;
+    private readonly string SampleInput = Input.For(2024, 6, true);
 
     [Fact]
     public void Part1()
