@@ -9,6 +9,7 @@ public class Day01 : PuzzleBase<IEnumerable<(char Direction, int Steps)>>
     protected override IEnumerable<(char Direction, int Steps)> Parse(string input)
         => Lines(input)
             .Select(line => (line[0], Convert.ToInt32(line[1..])));
+
     protected override string Part1(IEnumerable<(char Direction, int Steps)> input)
     {
         int current = 50;
