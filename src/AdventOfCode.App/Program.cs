@@ -7,7 +7,8 @@ var assemblies = new[] {
     typeof(AdventOfCode.Puzzles.Year2021.Day01).Assembly,
     typeof(AdventOfCode.Puzzles.Year2022.Day01).Assembly,
     typeof(AdventOfCode.Puzzles.Year2023.Day01).Assembly,
-    typeof(AdventOfCode.Puzzles.Year2024.Day01).Assembly
+    typeof(AdventOfCode.Puzzles.Year2024.Day01).Assembly,
+    typeof(AdventOfCode.Puzzles.Year2025.Day01).Assembly
 };
 
 var puzzleTypes = assemblies

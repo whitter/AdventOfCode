@@ -6,6 +6,7 @@
     <ProjectReference Include="..\AdventOfCode.Puzzles.Year2022\AdventOfCode.Puzzles.Year2022.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles.Year2023\AdventOfCode.Puzzles.Year2023.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles.Year2024\AdventOfCode.Puzzles.Year2024.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.Year2025\AdventOfCode.Puzzles.Year2025.csproj" />
     <ProjectReference Include="..\AdventOfCode.Puzzles\AdventOfCode.Puzzles.csproj" />
   </ItemGroup>
 
