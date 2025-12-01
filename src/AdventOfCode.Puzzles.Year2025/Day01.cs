@@ -1,44 +1,34 @@
+using MoreLinq;
+
 namespace AdventOfCode.Puzzles.Year2025;
 
-public class Day01 : PuzzleBase<IEnumerable<(char Direction, int Steps)>>
+public class Day01 : PuzzleBase<IEnumerable<int>>
 {
     public override int Year => 2025;
     public override int Day => 1;
     public override string Name => "Secret Entrance";
 
-    protected override IEnumerable<(char Direction, int Steps)> Parse(string input)
+    protected override IEnumerable<int> Parse(string input)
         => Lines(input)
-            .Select(line => (line[0], Convert.ToInt32(line[1..])));
+            .Select(line => Convert.ToInt32(line[1..]) * (line[0] == 'R' ? 1 : -1));
 
-    protected override string Part1(IEnumerable<(char Direction, int Steps)> input)
+    protected override string Part1(IEnumerable<int> input)
     {
-        var steps = input.Select(step => step.Direction == 'R' ? step.Steps : -step.Steps);
-
-        return Rotate(steps).Count(IsZero).ToString();
+        return input.Scan(50, (position, step) => (position + step) % 100)
+            .Count(x => x == 0)
+            .ToString();
     }
 
-    protected override string Part2(IEnumerable<(char Direction, int Steps)> input)
+    protected override string Part2(IEnumerable<int> input)
     {
-        var steps = input.SelectMany(x =>
+        return input.Scan((Position: 50, Count: 0), (current, step) =>
         {
-            var direction = x.Direction == 'R' ? 1 : -1;
+            var rotated = current.Position + step;
+            var count = Math.Abs(rotated / 100) + ((rotated <= 0 && current.Position > 0) || rotated >= 0 && current.Position < 0 ? 1 : 0);
 
-            return Enumerable.Range(0, x.Steps).Select(_ => direction);
-        });
-
-        return Rotate(steps).Count(IsZero).ToString();
-    }
-
-    private static readonly Func<int, bool> IsZero = step => step == 0;
-
-    private static IEnumerable<int> Rotate(IEnumerable<int> input)
-    {
-        int current = 50;
-
-        foreach (var step in input)
-        {
-            current = (current + step) % 100;
-            yield return current;
-        }
+            return (rotated % 100, count);
+        })
+            .Sum(x => x.Count)
+            .ToString();
     }
 }
