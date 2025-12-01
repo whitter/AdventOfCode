@@ -7,9 +7,6 @@ namespace AdventOfCode.Puzzles.Extensions
     {
         public static IEnumerable<TResult> Scan<TSource, TResult>(this IEnumerable<TSource> source, TResult seed, Func<TResult, TSource, TResult> transformation)
         {
-            if (source == null) throw new ArgumentNullException(nameof(source));
-            if (transformation == null) throw new ArgumentNullException(nameof(transformation));
-
             using var e = source.GetEnumerator();
 
             yield return seed;
