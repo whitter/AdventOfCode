@@ -1,4 +1,4 @@
-using MoreLinq;
+using AdventOfCode.Puzzles.Extensions;
 
 namespace AdventOfCode.Puzzles.Year2025;
 
