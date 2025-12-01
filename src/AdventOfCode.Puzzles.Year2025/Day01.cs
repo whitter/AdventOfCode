@@ -12,20 +12,31 @@ public class Day01 : PuzzleBase<IEnumerable<(char Direction, int Steps)>>
 
     protected override string Part1(IEnumerable<(char Direction, int Steps)> input)
     {
-        int current = 50;
-        int result = 0;
+        var steps = input.Select(step => step.Direction == 'R' ? step.Steps : -step.Steps);
 
-        foreach (var (direction, steps) in input)
-        {
-            var move = direction == 'R' ? steps : -steps;
-            current = (current + move) % 100;
-
-            if (current == 0) result++;
-        }
-
-        return result.ToString();
+        return Rotate(steps).Count(step => step == 0).ToString();
     }
 
     protected override string Part2(IEnumerable<(char Direction, int Steps)> input)
-        => "";
+    {
+        var steps = input.SelectMany(x =>
+        {
+            var direction = x.Direction == 'R' ? 1 : -1;
+
+            return Enumerable.Range(0, x.Steps).Select(_ => direction);
+        });
+
+        return Rotate(steps).Count(step => step == 0).ToString();
+    }
+
+    private static IEnumerable<int> Rotate(IEnumerable<int> input)
+    {
+        int current = 50;
+
+        foreach (var step in input)
+        {
+            current = (current + step) % 100;
+            yield return current;
+        }
+    }
 }

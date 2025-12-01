@@ -24,6 +24,6 @@ public class Day01Tests
 
         var result = puzzle.SolvePart2(SampleInput);
 
-        Assert.Equal("31", result);
+        Assert.Equal("6", result);
     }
 }
