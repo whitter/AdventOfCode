@@ -14,7 +14,7 @@ public class Day01 : PuzzleBase<IEnumerable<(char Direction, int Steps)>>
     {
         var steps = input.Select(step => step.Direction == 'R' ? step.Steps : -step.Steps);
 
-        return Rotate(steps).Count(step => step == 0).ToString();
+        return Rotate(steps).Count(IsZero).ToString();
     }
 
     protected override string Part2(IEnumerable<(char Direction, int Steps)> input)
@@ -26,8 +26,10 @@ public class Day01 : PuzzleBase<IEnumerable<(char Direction, int Steps)>>
             return Enumerable.Range(0, x.Steps).Select(_ => direction);
         });
 
-        return Rotate(steps).Count(step => step == 0).ToString();
+        return Rotate(steps).Count(IsZero).ToString();
     }
+
+    private static readonly Func<int, bool> IsZero = step => step == 0;
 
     private static IEnumerable<int> Rotate(IEnumerable<int> input)
     {
