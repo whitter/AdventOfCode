@@ -30,6 +30,6 @@ public class Day02 : PuzzleBase<IEnumerable<long[]>>
         return selector(sId)
             .Where(x => sId.Length % x == 0)
             .Select(x => sId.Length / x)
-            .Any(x => sId.Chunk(x).Select(c => String.Concat(c)).All(c => c == sId[..x]));
+            .Any(x => string.Concat(Enumerable.Repeat(sId[..x], sId.Length / x)) == sId);
     }
 }
